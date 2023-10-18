@@ -77,8 +77,41 @@
         </tr>
     </table>
     <img src="../资源/表格标签名.png" alt="表格标签名" title="表格标签名" height="300">
+    <br>
     <img src="../资源/表格结构标签.png" alt="表格结构标签" title="表格结构标签" height="200">
     <h3>注:右图作用:用表格结构标签把内容划分区域，让表格结构更清晰，语义更清晰</h3>
+
+    <hr>
+    <h2>rowspan跨行合并单元格 保留最上面一格</h2>
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <th>语文</th>
+            <th>数学</th>
+            <th>英语</th>
+            <th>总分</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>90</td>
+            <td>100</td>
+            <td rowspan="2">100</td>
+            <td>190</td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>95</td>
+            <td>95</td>
+            <td>190</td>
+        </tr>
+        <tr>
+            <td>全市排名</td>
+            <td colspan="4">总分并列第一</td>
+        </tr>
+    </table>
+    <h2>colspan跨列合并单元格 保留最左边一格</h2>
+    <img src="../资源/合并单元格.png" alt="合并单元格" title="合并单元格" height="400">
+
 
 
 </body>
