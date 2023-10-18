@@ -4,16 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML5+CSS3知识点总目录</title>
+    <style>
+        .element {
+            position: absolute;
+            font-size: 2em;
+            color: #879afa; /* LightSkyBlue */
+        }
+        .trail {
+            position: absolute;
+            font-size: 2em;
+            color: #ffb6c1a6; /* LightPink */
+            opacity: 0.5;
+            animation: fadeout 1s linear forwards; /* Add fadeout animation */
+        }
+        @keyframes fadeout {
+            from { opacity: 0.5; }
+            to { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
 <h1>知识点总目录</h1>
 <a href="https://github.com/ZH0531/ZH0531.github.io" target="_blank">GitHub项目链接跳转</a>←点击
+<h4>本页面动画由ChatGPT-4生成</h4>
 <hr>
 <h2>HTML5</h2>
 <a href="./知识点合集/标题h1-h6、段落p、超链接a、图片img、音频audio、视频video.html">1-<strong>标题、段落、链接、图片、音频、视频</strong></a>
 <br><br>
 <a href="./知识点合集/无序列表ul、有序列表ol、定义列表dl、表格table.html">2-<strong>无序列表、有序列表、定义列表、表格</strong> </a>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var elements = ['Java', 'HTML', 'CSS', 'JavaScript', 'Python', 'Ruby', 'C++', 'C#', 'PHP','love','武汉信息传播职业技术学院','ZH0531'];
+    
+    elements.forEach(function(element, index) {
+        var div = document.createElement('div');
+        div.className = 'element';
+        div.style.left = Math.random() * window.innerWidth + 'px';
+        div.style.top = Math.random() * window.innerHeight + 'px';
+        div.innerHTML = element;
+        
+        document.body.appendChild(div);
+        
+        var dx = Math.random() * 20 - 10; // Initial direction
+        var dy = Math.random() * 20 - 10; // Initial direction
+        
+        setInterval(function() {
+            var x = parseFloat(div.style.left);
+            var y = parseFloat(div.style.top);
+            
+            // Create trail
+            var trail = div.cloneNode(true);
+            trail.className = 'trail';
+            document.body.appendChild(trail);
+            
+            setTimeout(function() {
+                document.body.removeChild(trail);
+            }, 1000);
+            
+            // Update position
+            x += dx;
+            y += dy;
+            
+            // Check for collision with screen edges and reverse direction if necessary
+            if (x < 0 || x > window.innerWidth - div.offsetWidth) {
+                dx = -dx; // Reverse direction
+                x += dx;
+            }
+            if (y < 0 || y > window.innerHeight - div.offsetHeight) {
+                dy = -dy; // Reverse direction
+                y += dy;
+            }
+            
+            div.style.left = x + 'px';
+            div.style.top = y + 'px';
+        }, 50); // Reduced interval for smoother animation
+    });
+</script>
 
 </body>
 </html>
