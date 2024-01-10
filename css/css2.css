@@ -1,0 +1,28 @@
+/*超链接在访问之前和访问之后的状态*/
+a:link,a:visited{
+	text-decoration: none; /*清楚超链接的下划线*/
+	color: #fff;
+	font-size: 16px;
+}
+/*头部模块样式*/
+#header{
+	height: 128px;
+	width: 100%;
+	background: url(../img/head_bg.png) repeat-x;
+	border-bottom: 3px solid #d5d5d5;
+}
+.nav{
+	margin: 0 auto;
+	width: 980px;
+}
+li{
+	float: left;
+}
+.li a{
+	display: inline-block;/*超链接接行内元素转换成了行内块元素*/
+	height: 91px;
+	width: 119px;
+	text-align: center;
+	line-height: 70px;
+    background: url(../img/xuanfu.png) center center;
+}
